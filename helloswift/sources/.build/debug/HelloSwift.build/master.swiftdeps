@@ -1,0 +1,5 @@
+version: "Swift version 3.0.2 (swift-3.0.2-RELEASE)"
+options: "3810d46a1c9baae9f455cba86037c413"
+build_time: [567072286, 54035000]
+inputs:
+  "/home/ubuntu/workspace/swift/helloswift/sources/main.swift": [567072063, 0]

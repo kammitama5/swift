@@ -1,0 +1,31 @@
+client:
+  name: swift-build
+tools: {}
+targets:
+  "test": ["<HelloSwift.module>","<HelloSwift.exe>"]
+  "main": ["<HelloSwift.module>","<HelloSwift.exe>"]
+default: "main"
+commands: 
+  "<HelloSwift.module>":
+    tool: swift-compiler
+    executable: "/home/ubuntu/swift/usr/bin/swiftc"
+    module-name: "HelloSwift"
+    module-output-path: "/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.swiftmodule"
+    inputs: []
+    outputs: ["<HelloSwift.module>","/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main.swift.o"]
+    import-paths: ["/home/ubuntu/workspace/swift/helloswift/sources/.build/debug"]
+    temps-path: "/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build"
+    objects: ["/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main.swift.o"]
+    other-args: ["-j8","-D","SWIFT_PACKAGE","-Onone","-g","-enable-testing","-module-cache-path","/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/ModuleCache"]
+    sources: ["/home/ubuntu/workspace/swift/helloswift/sources/main.swift"]
+    is-library: false
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "<HelloSwift.exe>":
+    tool: shell
+    description: "Linking ./.build/debug/HelloSwift"
+    inputs: ["/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main.swift.o"]
+    outputs: ["<HelloSwift.exe>","/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift"]
+    args: ["/home/ubuntu/swift/usr/bin/swiftc","-Xlinker","-rpath=$ORIGIN","-g","-L/home/ubuntu/workspace/swift/helloswift/sources/.build/debug","-o","/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift","-emit-executable","/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main.swift.o"]
+

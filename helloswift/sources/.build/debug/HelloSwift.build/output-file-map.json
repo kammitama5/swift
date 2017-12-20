@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/master.swiftdeps"
+  },
+  "/home/ubuntu/workspace/swift/helloswift/sources/main.swift": {
+    "dependencies": "/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main.d",
+    "object": "/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main.swift.o",
+    "swiftmodule": "/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main~partial.swiftmodule",
+    "swift-dependencies": "/home/ubuntu/workspace/swift/helloswift/sources/.build/debug/HelloSwift.build/main.swiftdeps"
+  }
+}
